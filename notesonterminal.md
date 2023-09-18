@@ -162,6 +162,27 @@ exit:
 ```c
 int x;
 printf("%d", x);
+
+
+//  x == 1234 
+
+// You have to divide by 10 and store it to the [||||]
+/*
+
+Dividing: --
+
+10|1234__R4
+10|123__R4
+10|12__R3
+10|1__R2
+  |0
+
+Store [1|2|3|4|o]
+
+*/
+
+// Read on ASCII Characters + UNICODE
+
 ```
 
 
