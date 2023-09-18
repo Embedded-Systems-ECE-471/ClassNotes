@@ -78,6 +78,100 @@ r12-r15   ~~ (stack, LR, PC)
 # Monday 18th Sept
 
 
+<!-- ![] -->
+
+```s
+# equ SYSCALL_EXIT,       1
+
+
+        .global_start
+_start:
+
+        #======================
+        # Exit
+        #======================
+exit:  
+
+@ didnt write everything
+
+
+```
+
+### Codes run on Terminal for hello_world file
+
+Getting the size `ls la <file>`
+
+`make clean`
+
+`readelf -a <code> | less`
+
+`objdump --disassemble-all <file>`
+
+`strace <file>`
+
+
+
+- Write System Call Arguments: 
+               - fd
+               - pointer to data 
+               - length
+
+
+```s
+.equ SYSCALL_EXIT,       1
+.equ SYSCALL_WRITE,      4
+
+.equ STDOUT,             1
+
+
+        .global_start
+_start:
+        mov     r0, #STDOUT          /* stdout */
+        ldr     r1, =hello
+        mov     r2, #13              @ length
+        mov     r7, #SYSCALL_WRITE
+        swi     0x0
+
+
+        #===============
+        #Exit
+        #==============
+exit:
+        mov     r0, #5
+        mov     r7, #SYSCALL_EXIT       @ put exit syscall number in register 7 (r7)
+        swi     0x0                     @ put exit code
+
+```
+
+
+`man write`
+
+
+### Debbuger
+
+`gdb <code>`    ---- gdb debugger
+
+`(gdb) info regis `
+
+`disassem`
+
+`stepi`  ---- go one step
+
+
+## Back to C CODES
+
+#### Printing an Integer
+
+```c
+int x;
+printf("%d", x);
+```
+
+
+
+
+# Wednesday  
+
 
 
 
