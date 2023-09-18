@@ -1,6 +1,6 @@
 
 
-<!-- Friday 15th Sept -->
+# Friday 15th Sept
 
 - `sudo shutdown -h` now(shut down immediately)
 
@@ -74,6 +74,8 @@ r12-r15   ~~ (stack, LR, PC)
 
 
 
+
+# Monday 18th Sept
 
 
 
