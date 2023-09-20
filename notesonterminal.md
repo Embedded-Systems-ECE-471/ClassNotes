@@ -220,10 +220,60 @@ Barrd Shift
         add r0,r0,r0,c5c #2
 
 
+Addressing
+        ldr r0, [r1]
+        ldr r0, [r1, #20]
+        ldr r0, [r1,r2]
+
+ldr r1, [r2,r3, ]
 
 
 
+<!-- Missed some stuff here -->
 
+### Conditional Execution
+
+```s
+if(x==5){
+        a+=2;
+}else{
+        b = b-2;
+}
+
+```
+
+```s
+cmp r1,#5
+bne else
+add r2,r2,#2
+b done
+else:
+     sub r3,r3,#2
+done:
+
+```
+
+
+```s
+cmp r1,#5
+addeq r2,r2,#2
+subne r3,r3,#2
+
+# explanation :-
+
+[cond|opcode| |Rn]  [Rd| | |Rm]
+
+
+[ ]
+
+
+THUMB
+        + remove conditional
+        + acces r0, r7
+        + only two arguments
+        + no barrel shift
+
+```
 
 
 
