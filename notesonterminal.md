@@ -285,8 +285,16 @@ THUMB -2
           conditional exec limited
 ```
 
+```s
+.thumb 
+        it cc
+        addcc r1,r2
 
+        itece cc
+        addcc 
+        addcs
 
+```    
 
 
 
