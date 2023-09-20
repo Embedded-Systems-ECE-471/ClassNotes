@@ -294,7 +294,21 @@ THUMB -2
         addcc 
         addcs
 
-```    
+```
+
+
+
+### AARCH64      ARM64
+
+  + 32 bit fixed encoding
+  + 32 64-bit General Purpose registers
+        x0  .... x31
+        x0  .... x7 args
+        x8  .... x18 temp
+        x19 .... x28 callee
+        x29 frame pointer
+        x30 link reg
+        x31 stack pointer, or Zero register
 
 
 
