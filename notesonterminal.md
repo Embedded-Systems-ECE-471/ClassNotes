@@ -187,6 +187,43 @@ Store [1|2|3|4|o]
 
 
 
+# Wednesday 20th Sept
+
+add r0,r1,r2
+sub
+mul
+
+
+and     
+orr
+eur
+
+        mov r0,#0
+loop:
+    :
+    :
+    :
+    add  r0,r0,#1
+    cmp  r0,#10
+    lone loop
+
+### Flags
+z --- zero
+v --- overflow
+n --- negative
+c --- carry
+
+
+### Wierd ARM Things
+Barrd Shift
+        x=x*5;
+        add r0,r0,r0,c5c #2
+
+
+
+
+
+
 
 
 
