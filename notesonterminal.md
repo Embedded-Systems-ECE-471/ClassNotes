@@ -275,7 +275,15 @@ THUMB
 
 ```
 
-
+```s
+THUMB -2
+        + Full new encoding at machine level language
+        + Instructions can be 32 or 16 bit
+          removed instructions, rsc
+          barrel shift limited
+          add,w  add,n
+          conditional exec limited
+```
 
 
 
