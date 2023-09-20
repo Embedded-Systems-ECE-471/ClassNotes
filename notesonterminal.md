@@ -276,7 +276,7 @@ THUMB
 ```
 
 ```s
-THUMB -2
+THUMB -2   #noice 
         + Full new encoding at machine level language
         + Instructions can be 32 or 16 bit
           removed instructions, rsc
@@ -298,7 +298,7 @@ THUMB -2
 
 
 
-### AARCH64      ARM64
+### AARCH64      ARM64 **** 
 
   + 32 bit fixed encoding
   + 32 64-bit General Purpose registers
