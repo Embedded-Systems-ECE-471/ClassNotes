@@ -186,27 +186,7 @@ Store [1|2|3|4|o]
 ```
 
 
-# Wednesday Class
 
-```s
-        gdb
-        lar r3, [r3]
-
-   if(ch[0] == 0) {}
-   
-
-   cal 9 2023
-   cal 1 1950
-
-```
-
-
-#### Virtual Memory
-
-+ provide memory protection
-+ give code flat view of memory where it owns everything
-
-#### Without OS
 
 
 
