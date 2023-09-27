@@ -170,7 +170,8 @@ printf("%d", x);
 //  x == 1234 
 
 // You have to divide by 10 and store it to the [||||]
-/*
+
+```s
 
 Dividing: --
 
@@ -182,7 +183,7 @@ Dividing: --
 
 Store [1|2|3|4|o]
 
-*/
+```
 
 // Read on ASCII Characters + UNICODE
 
