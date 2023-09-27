@@ -190,7 +190,27 @@ Store [1|2|3|4|o]
 ```
 
 
-# Wednesday  
+# Wednesday 27th Sept.  
+
+```s
++ exit in assembly 
+
+ABI - r0 is first argument
+        exit (42),
+
+
+0x 10400
+gcc 10
+gcc 12
+
+0x500
+ARM32 ~~ 112 bytes
+Tumb2 ~~ 88 bytes
+
+```
+
+
+
 
 
 
