@@ -186,6 +186,70 @@ Store [1|2|3|4|o]
 ```
 
 
+<!-- Thrsday 29th  -->
+
+PI 5 announced
+
+Cortex A76
+PCI e
+Droped the headphone jack
+
+
+### i2C
+Inter integrated circuit
+invented by Philips 1982
+
+Broadcom TWI
+        two wire interface
+
+        power + gnd two, 4 wires
+
+#### Uses of i2C
++ sensors
++ DDC - video cables
+        + IDM2/ UGA cables
++ SDRAM 
++ SMbus
+        fans/temp sensors
++ W Nunchuck
+
+
+### Hardware
+- Serial Data SDA
+- Serial Clock SCL
+- Open drain
+
+### Devices
+- Have a unique ID
+- 7-bits (10-bit ID extension)
+
+### Length Limitation
+- "Few metres" 400pF
+You can get extenders 
+
+### Speed
+Standard speed 100kbits/second
+Slow: 10 kbits/s
+v1, 1992: 400k/s 10bit addresing
+v2, 1998: High speed 3.4M/s 10bit addresing
+v3, 2007 Fast plus 1Mbits/s (20ma)
+v4 2012 5MHz uFm
+
+
+### High level protocol
++ can be multiple controlers + devices
++ Controller sends start bit
+                sends 7-bit address
+                sends read/write bit
+
+Device responds with ACK (acknowledge)
+
+Controller reads/writes 8 data bits
+            after each 8-bits, check for ACK
+Controller sends stop bit
+
+  
+
 
 
 
