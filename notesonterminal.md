@@ -346,9 +346,83 @@ BIOS
 UEFI --- Unified Extensible Firware Interface
 
 
+#### Bootloader 
+
++ Code just smart enough to load the OS
++ Not many resources stay simple
+
+#### Pi Booting
++ Unusual --- GPU (graphics card) --handles boot
++ Small amount of firmware'
++ Arm chip brought up, but asleep
++ GPU (videocord) loads bootloader
 
 
+#### Boot
++ Videocore reads bootcode bin
+    + /boot partition(FAT)
+    + Own OS, RTOS [Real time OS]
+    + ThreadX
 
+- ThreadX gets rest of system going
+- SDRAM, loads 
+
+
+#### PI4
+Reads initila file from SPI eeprom
+Fancier Boot methods
+        nexboot
+        usb stick
+        PCIe bus
+
+
+#### ARM System Booting
++ UBoot
++ ARM chip boots everything
++ MCO - First stage
++ uBoot - second stge
+
+
+#### Partitions
++ logically split a storage device into multiple sections
+[boot | swap | // | /home]
+/dev/sda1   C1
+/dev/sda2   D1
+            E1
+
+#### FAT
+File Allocation Table
+        simple filesystem
+        1980s
+        64l RAM
+portable
+Filesystem often used
+        for/boot
+        simple
+
+
+#### Booting options
++ Floppy Disk
++ Hard Drve(SSD)
++ USB-Stick
++ SD-Card
++ CD-ROM / DVD
++ Network
+
+#### Enumerating Hardware
++ Hard code
++ Standard 
+      + IBM PC
+      + VGA = A000; 0000
++ Enumarate, Search
+      + USB
+      + PCIe
++ Ideally Firmware tells you
+      + x86 --- ACPI
+      + ARM
+        + Device Tree, Binary blob, Open standard
+        + ICCy, value
+        + Memory; 1GB
 
 
 
