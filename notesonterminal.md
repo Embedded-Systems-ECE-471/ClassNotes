@@ -311,6 +311,40 @@ THUMB -2   #noice
         x31 stack pointer, or Zero register
 
 
+<!-- Monday 2nd October -->
+
+#### Reserved Addreses
+
+ 7 bit address 0 ..... 127
+
+ 0
+
+        reserved
+ 8
+
+ 78
+        78..7C --10-bit addreses 
+
+
+ 7F 
+
+#### Firmware
+
++ Code burned / flashed into device
++ Often controls low-level operation of devices
+
+#### Boot Firware
+
++ Starts from scratch
++ Gets your system running
++ Kernel people
+        + antagonistic relationship with firmware
+  
+
+#### Desktop x86
+BiOS
+UEFI --- Unified Extensible Firware Interface
+  
 
 
 
