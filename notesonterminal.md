@@ -186,129 +186,76 @@ Store [1|2|3|4|o]
 ```
 
 
+<!-- Thrsday 29th  -->
 
-# Wednesday 20th Sept
+PI 5 announced
 
-add r0,r1,r2
-sub
-mul
-
-
-and     
-orr
-eur
-
-        mov r0,#0
-loop:
-    :
-    :
-    :
-    add  r0,r0,#1
-    cmp  r0,#10
-    lone loop
-
-### Flags
-z --- zero
-v --- overflow
-n --- negative
-c --- carry
+Cortex A76
+PCI e
+Droped the headphone jack
 
 
-### Wierd ARM Things
-Barrd Shift
-        x=x*5;
-        add r0,r0,r0,c5c #2
+### i2C
+Inter integrated circuit
+invented by Philips 1982
+
+Broadcom TWI
+        two wire interface
+
+        power + gnd two, 4 wires
+
+#### Uses of i2C
++ sensors
++ DDC - video cables
+        + IDM2/ UGA cables
++ SDRAM 
++ SMbus
+        fans/temp sensors
++ W Nunchuck
 
 
-Addressing
-        ldr r0, [r1]
-        ldr r0, [r1, #20]
-        ldr r0, [r1,r2]
+### Hardware
+- Serial Data SDA
+- Serial Clock SCL
+- Open drain
 
-ldr r1, [r2,r3, ]
+### Devices
+- Have a unique ID
+- 7-bits (10-bit ID extension)
 
+### Length Limitation
+- "Few metres" 400pF
+You can get extenders 
 
-
-<!-- Missed some stuff here -->
-
-### Conditional Execution
-
-```s
-if(x==5){
-        a+=2;
-}else{
-        b = b-2;
-}
-
-```
-
-```s
-cmp r1,#5
-bne else
-add r2,r2,#2
-b done
-else:
-     sub r3,r3,#2
-done:
-
-```
+### Speed
+Standard speed 100kbits/second
+Slow: 10 kbits/s
+v1, 1992: 400k/s 10bit addresing
+v2, 1998: High speed 3.4M/s 10bit addresing
+v3, 2007 Fast plus 1Mbits/s (20ma)
+v4 2012 5MHz uFm
 
 
-```s
-cmp r1,#5
-addeq r2,r2,#2
-subne r3,r3,#2
+### High level protocol
++ can be multiple controlers + devices
++ Controller sends start bit
+                sends 7-bit address
+                sends read/write bit
 
-# explanation :-
+Device responds with ACK (acknowledge)
 
-[cond|opcode| |Rn]  [Rd| | |Rm]
+Controller reads/writes 8 data bits
+            after each 8-bits, check for ACK
+Controller sends stop bit
 
-
-[ ]
-
-
-THUMB
-        + remove conditional
-        + acces r0, r7
-        + only two arguments
-        + no barrel shift
-
-```
-
-```s
-THUMB -2   #noice 
-        + Full new encoding at machine level language
-        + Instructions can be 32 or 16 bit
-          removed instructions, rsc
-          barrel shift limited
-          add,w  add,n
-          conditional exec limited
-```
-
-```s
-.thumb 
-        it cc
-        addcc r1,r2
-
-        itece cc
-        addcc 
-        addcs
-
-```
+  
 
 
 
-### AARCH64      ARM64 **** 
 
-  + 32 bit fixed encoding
-  + 32 64-bit General Purpose registers
-        x0  .... x31
-        x0  .... x7 args
-        x8  .... x18 temp
-        x19 .... x28 callee
-        x29 frame pointer
-        x30 link reg
-        x31 stack pointer, or Zero register
+
+
+
 
 
 <!-- Monday 2nd October -->
