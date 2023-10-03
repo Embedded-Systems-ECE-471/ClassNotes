@@ -218,6 +218,93 @@ Thumb2 ~~ 88 bytes
 
 
 
+# Monday 2nd October
+
+#### Reserved Addreses
+
+ 7 bit address 0 ..... 127
+
+ 0
+
+        reserved
+ 8
+
+ 78
+        78..7C --10-bit addreses 
+
+
+ 7F 
+
+#### Firmware
+
++ Code burned / flashed into device
++ Often controls low-level operation of devices
+
+#### Boot Firware
+
++ Starts from scratch
++ Gets your system running
++ Kernel people
+        + antagonistic relationship with firmware
+  
+
+#### Desktop x86
+BIOS
+UEFI --- Unified Extensible Firware Interface
+
+#### Bootloader 
+
++ Code just smart enough to load the OS
++ Not many resources stay simple
+
+#### Pi Booting
++ Unusual --- GPU (graphics card) --handles boot
++ Small amount of firmware'
++ Arm chip brought up, but asleep
++ GPU (videocord) loads bootloader
+
+
+#### Boot
++ Videocore reads bootcode bin
+    + /boot partition(FAT)
+    + Own OS, RTOS [Real time OS]
+    + ThreadX
+
+- ThreadX gets rest of system going
+- SDRAM, loads 
+
+
+#### PI4
+Reads initila file from SPI eeprom
+Fancier Boot methods
+        nexboot
+        usb stick
+        PCIe bus
+
+
+#### ARM System Booting
++ UBoot
++ ARM chip boots everything
++ MCO - First stage
++ uBoot - second stge
+
+
+#### Partitions
++ logically split a storage device into multiple sections
+[boot | swap | // | /home]
+/dev/sda1   C1
+/dev/sda2   D1
+            E1
+
+#### FAT
+File Allocation Table
+        simple filesystem
+        1980s
+        64l RAM
+portable
+Filesystem often used
+        for/boot
+        simple
 
 
 
