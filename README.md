@@ -303,12 +303,31 @@ Filesystem often used
 
 `ls -la ./<filename>` - Checks the size of the file
 
-![](./Images/ls%20-lacmnd.png)
+![](./Images/lslacmnd.png)
 
 
 `hexdump -C <./<filename>` -See the raw binary (well, hex) values
 
 ![](./Images/hexdumpc.png)
+
+`readelf -a <./filename>` - Look at the elf executable layout
+
+![](./Images/readelf.png)
+
+`objdump ---disassemble-all <./filename>` - See the machine code we generated
+-Error encountered while running make on HW3
+![](./Images/HW3errorMake.png)
+
+`strace <./filename>` - Trace the system call as the happen
+![](./Images/strace.png)
+
+###### HW3 Images
+
++ Dissasembly of `integer_print`
+![](./Images/disassembleintprint.png)
+
++ Dissasembly of `integer_print_thumb2`
+![](./Images/disassembleintprintthumb.png)
 
 
 ### IMPORTANT COMMANDS
