@@ -301,15 +301,17 @@ Filesystem often used
 
 ### IMPORTANT COMMANDS
 
-`ls -la ./<file>` - Checks the size of the file
+`ls -la ./<filename>` - Checks the size of the file
 
-![](/ls -lacmnd.png)
-
-
+![](./Images/ls%20-lacmnd.png)
 
 
+`hexdump -C <./<filename>` -See the raw binary (well, hex) values
+
+![](./Images/hexdumpc.png)
 
 
+### IMPORTANT COMMANDS
 
 
 
