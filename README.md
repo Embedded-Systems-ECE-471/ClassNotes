@@ -206,11 +206,14 @@ gcc 12
 
 0x500
 ARM32 ~~ 112 bytes
-Tumb2 ~~ 88 bytes
+Thumb2 ~~ 88 bytes
 
 ```
 
+# IMPORTANT COMMANDS
 
+`ls -la ./<file>` - Checks the size of the file
+![](./ls -lacmnd.png)
 
 
 
