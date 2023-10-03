@@ -210,14 +210,6 @@ Thumb2 ~~ 88 bytes
 
 ```
 
-# IMPORTANT COMMANDS
-
-`ls -la ./<file>` - Checks the size of the file
-![](./ls -lacmnd.png)
-
-
-
-
 # Monday 2nd October
 
 #### Reserved Addreses
@@ -305,6 +297,14 @@ portable
 Filesystem often used
         for/boot
         simple
+
+
+### IMPORTANT COMMANDS
+
+`ls -la ./<file>` - Checks the size of the file
+
+![](/ls -lacmnd.png)
+
 
 
 
