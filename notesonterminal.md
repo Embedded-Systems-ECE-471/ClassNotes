@@ -476,7 +476,13 @@ What are real time constraints? :-
 + music
 + high speed trading 
 
+### Why isn't everything real time?
 
+- hard to do right
+- expensive
+- takes a lot of thesting
+- usually not necessary
+- 
 
 
 
