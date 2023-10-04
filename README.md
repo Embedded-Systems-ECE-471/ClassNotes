@@ -299,6 +299,58 @@ Filesystem often used
         simple
 
 
+# Wednesday 4th October
+
+### HW 4
+
+- error checking
+        - print error message
+        - exit
+  
+  `usleep()` --- can enter a low power state
+  `uname` 
+  linux pi 4,14.1 #122 smp Tue Jan armvl  WU/linux
+                                   arch64 
+
+
+### Disk Spacde
+df -h == human readable     512 byte chunks
+
+
+### Real Time Constraints
+What are real time constraints? :-
+        -> Time Deadlines the system needs to respond in
+        -> Goal not perfomance, but guaranteed response time
+        -> Deadlines often are short
+                Milliseconds to microseconds
+        
+
+### Types of Real Time
+
+##### Hard 
+        - miss deadlines, total failure of system
+        - people could die if miss deadlines
+
+##### Firm
+        - result no longer useful after deadline but occasional misses might be ok 
+        - video decoding
+
+##### Soft
+        - results you get are gradually less useful after deadline passes
+
+
+### Who uses Real Time
+
++ medical devices
++ vehicles
+    + airplanes, rockets, cars
++ testing equipment/measurements
++ industrial / SCADA
+    + power plants
++ music
++ high speed trading 
+
+
 
 
 
