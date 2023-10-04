@@ -206,7 +206,7 @@ gcc 12
 
 0x500
 ARM32 ~~ 112 bytes
-Tumb2 ~~ 88 bytes
+Thumb2 ~~ 88 bytes
 
 ```
 
@@ -299,6 +299,38 @@ Filesystem often used
         simple
 
 
+### IMPORTANT COMMANDS
+
+`ls -la ./<filename>` - Checks the size of the file
+
+![](./Images/lslacmnd.png)
+
+
+`hexdump -C <./<filename>` -See the raw binary (well, hex) values
+
+![](./Images/hexdumpc.png)
+
+`readelf -a <./filename>` - Look at the elf executable layout
+
+![](./Images/readelf.png)
+
+`objdump ---disassemble-all <./filename>` - See the machine code we generated
+-Error encountered while running make on HW3
+![](./Images/HW3errorMake.png)
+
+`strace <./filename>` - Trace the system call as the happen
+![](./Images/strace.png)
+
+###### HW3 Images
+
++ Dissasembly of `integer_print`
+![](./Images/disassembleintprint.png)
+
++ Dissasembly of `integer_print_thumb2`
+![](./Images/disassembleintprintthumb.png)
+
+
+### IMPORTANT COMMANDS
 # Wednesday 4th October
 
 ### HW 4
