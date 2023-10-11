@@ -385,11 +385,127 @@ What are real time constraints? :-
 
 
 
+# Wednesday 11th October
 
 
+### Midterm
++ In class
++ Closed book/notes
++ One page of notes
+  
+
+  # Midterm Quiz Tips
+- Know x-ticks of embedded systems
+        + inside
+        + fixed purpose
+        + resource constrained
+        + real-time
+        + lots of I/O
+  
+- Operating System
+        + Benefits
+             ~  "layers of abstraction"
+        +  Downside
+             ~  overhead
+
+- C Code
+        + look at code know what it is doing
+  
+        ```c
+        open()  errors -1
+        read()
+        write()
+        ioctl()
+        close()
+
+        ```
+- Code Density
+        + why dense code is good in embedded?
+        + ARM compressed / embedded
+                ISA          THUMB2
+
+- GPIO / i2c
+        + know limitations
+        + no need to know protocol
+  
+
+### Project
+- look at pdf on website
+        common projects
+                + weather station
+                + video game
+                + 
+
+### HW5
+
+#### Datasheet
+
+- Using the datasheet given
+
+[   |   ]
+15      8       
+
+```c
+
+#define HT16K33_OSCILLATOR_ON   ((0x2<<4) | (0x1));
+
+0x21; //enable oscilator
+(0x2<<4) | (0x1);
+
+```
 
 
+```bash
+# <!-- terminal code -->
 
+cat notesonterminal.md | wc -l
+cat notesonterminal.md | sort | uniq | wc -l
+git diff
+
+```
+
+### Getting Real-Time on a Modern System
+
++ Small system
+        - don't run an OS
+        - turn off interrupts
+        - turn off advanced CPU features
+        - lock memory into place
+        - 
++ High end Systems
+        - Deterministic helper CPUs
+        - PRU -beaglebores
+        - PIO -pi5
+        - embedded system in your `embeded system`
+        - 
+
+### Real Time OS
+
+- Special OS good at real time
+    - low latency OS calls + interupts
+    - Fast/ advanced context switch
+    - Job priority system
+          - specify som processes have high importance
+
+### Software Worst Case
+
++ IRQ overhed
+    - linux top/bottom half responds to interrupts as fast as possible
+
+### Context Switching
+
+- Switches quickly between processes
+- Multitasking
+- 100 Hz - 1000 Hz
+        Linux (250 Hz) //task switching
+
+### Scheduler
+
+- Picks what program runs next
+- Complex :-
+  - O(N)
+  - O(1)
+  - O(log N) -used now "completely fair scheduler"
 
 
 

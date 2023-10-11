@@ -576,6 +576,49 @@ git diff
 
 ```
 
+### Getting Real-Time on a Modern System
+
++ Small system
+        - don't run an OS
+        - turn off interrupts
+        - turn off advanced CPU features
+        - lock memory into place
+        - 
++ High end Systems
+        - Deterministic helper CPUs
+        - PRU -beaglebores
+        - PIO -pi5
+        - embedded system in your `embeded system`
+        - 
+
+### Real Time OS
+
+- Special OS good at real time
+    - low latency OS calls + interupts
+    - Fast/ advanced context switch
+    - Job priority system
+          - specify som processes have high importance
+
+### Software Worst Case
+
++ IRQ overhed
+    - linux top/bottom half responds to interrupts as fast as possible
+
+### Context Switching
+
+- Switches quickly between processes
+- Multitasking
+- 100 Hz - 1000 Hz
+        Linux (250 Hz) //task switching
+
+### Scheduler
+- picks what program runs next
+- complex
+- 
+
+
+
+
 <!-- Wednesday 11th October -->
 
 
