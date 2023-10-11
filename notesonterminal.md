@@ -484,7 +484,99 @@ What are real time constraints? :-
 - usually not necessary
 - 
 
+### What causes deviations from real time?
 
+- on an ideal machine same code you run would take same amount of time
+
+
+### Software                                                ### Hardware        
++ interupts                                                    + branch prediction
++ operationg system                                            + memory accesses
++ garbage collection                                           + page faults
++ multitasking                                                 + power scalling
+
+
+<!-- Friday 6th October -->
+
+<!-- Wednesday 11th October -->
+### Midterm
++ In class
++ Closed book/notes
++ One page of notes
+  
+
+  # Midterm Quiz Tips
+- Know x-ticks of embedded systems
+        + inside
+        + fixed purpose
+        + resource constrained
+        + real-time
+        + lots of I/O
+  
+- Operating System
+        + Benefits
+             ~  "layers of abstraction"
+        +  Downside
+             ~  overhead
+
+- C Code
+        + look at code know what it is doing
+  
+        ```c
+        open()  errors -1
+        read()
+        write()
+        ioctl()
+        close()
+
+        ```
+- Code Density
+        + why dense code is good in embedded?
+        + ARM compressed / embedded
+                ISA          THUMB2
+
+- GPIO / i2c
+        + know limitations
+        + no need to know protocol
+  
+
+### Project
+- look at pdf on website
+        common projects
+                + weather station
+                + video game
+                + 
+
+
+### HW5
+
+#### Datasheet
+
+- Using the datasheet given
+
+[   |   ]
+15      8       
+
+```c
+
+#define HT16K33_OSCILLATOR_ON   ((0x2<<4) | (0x1));
+
+0x21; //enable oscilator
+(0x2<<4) | (0x1);
+
+```
+
+
+```bash
+# <!-- terminal code -->
+
+cat notesonterminal.md | wc -l
+cat notesonterminal.md | sort | uniq | wc -l
+git diff
+
+```
+
+<!-- Wednesday 11th October -->
 
 
 
