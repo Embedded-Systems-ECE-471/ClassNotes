@@ -423,245 +423,117 @@ Filesystem often used
         + Device Tree, Binary blob, Open standard
         + ICCy, value
         + Memory; 1GB
-  
-
-# Wednesday 4th October
-
-### HW 4
-
-- error checking
-        - print error message
-        - exit
-  
-  `usleep()` --- can enter a low power state
-  `uname` 
-  linux pi 4,14.1 #122 smp Tue Jan armvl  WU/linux
-                                   arch64 
-
-
-### Disk Spacde
-df -h == human readable     512 byte chunks
-
-
-### Real Time Constraints
-What are real time constraints? :-
-        -> Time Deadlines the system needs to respond in
-        -> Goal not perfomance, but guaranteed response time
-        -> Deadlines often are short
-                Milliseconds to microseconds
-        
-
-### Types of Real Time
-
-##### Hard 
-        - miss deadlines, total failure of system
-        - people could die if miss deadlines
-
-##### Firm
-        - result no longer useful after deadline but occasional misses might be ok 
-        - video decoding
-
-##### Soft
-        - results you get are gradually less useful after deadline passes
-
-
-### Who uses Real Time
-
-+ medical devices
-+ vehicles
-    + airplanes, rockets, cars
-+ testing equipment/measurements
-+ industrial / SCADA
-    + power plants
-+ music
-+ high speed trading 
-
-### Why isn't everything real time?
-
-- hard to do right
-- expensive
-- takes a lot of thesting
-- usually not necessary
-- 
-
-### What causes deviations from real time?
-
-- on an ideal machine same code you run would take same amount of time
-
-
-### Software                                                ### Hardware        
-+ interupts                                                    + branch prediction
-+ operationg system                                            + memory accesses
-+ garbage collection                                           + page faults
-+ multitasking                                                 + power scalling
 
 
 <!-- Friday 6th October -->
 
-<!-- Wednesday 11th October -->
 ### Midterm
-+ In class
-+ Closed book/notes
-+ One page of notes
-  
-
-  # Midterm Quiz Tips
-- Know x-ticks of embedded systems
-        + inside
-        + fixed purpose
-        + resource constrained
-        + real-time
-        + lots of I/O
-  
-- Operating System
-        + Benefits
-             ~  "layers of abstraction"
-        +  Downside
-             ~  overhead
-
-- C Code
-        + look at code know what it is doing
-  
-        ```c
-        open()  errors -1
-        read()
-        write()
-        ioctl()
-        close()
-
-        ```
-- Code Density
-        + why dense code is good in embedded?
-        + ARM compressed / embedded
-                ISA          THUMB2
-
-- GPIO / i2c
-        + know limitations
-        + no need to know protocol
-  
-
-### Project
-- look at pdf on website
-        common projects
-                + weather station
-                + video game
-                + 
+- In class
+- Closed book / notes
+- One page of nots
+- Mostly short answers
+- No coding, might give you code similar to HW task quiz
 
 
-### HW5
+### Topics
+- Characteristics of Embedded Systems
++ Benefits of an OS
++ Downside of an OS
++ Busses
+        GPIO
+        I2C - limitations
+                length of cable
+                speed
++ Code density
+        Having small code still important
++ No assembly coding
++ THUMB-2
 
-#### Datasheet
 
-- Using the datasheet given
+### Atari VCS 2600
+1977
+        6507 processor
+        6502 hacked off pins
+                12 address lines
+                4K ROM
+                128 bytes of RAM'
+                memmory mapped I/O
+                No firmware, jumps to reset vector
 
-[   |   ]
-15      8       
+
+### Software Jitter
++ Interupts
++ Operating system
++ Garbage collection
+
+
+### Latency
+ 
+
+
+<!-- Monday 16th October -->
+
+### Scheduler Strategies
+
+Program ready to run go into a queue
++ Simple ---> (IN-Order) order they arrived
++ Static ----> (RMS) Rate Monotonic Scheduling
+                shortest task first
++ Dynamic  ----> (EDF) Earlies Deadline First
+
+``A``; deadline finishes in `10s` , takes `4s`
+``B``; deadline finishes in `3s` , takes `2s`
+``C``; deadline finishes in `5s` , takes `1s`
+
+Example of scheduling strategies :-
+```
+|___________|012345678910|  ------> time they take
+|___________|____________|
+|In Order   |AAAABBC_____|
+|RMS        |CBBAAAA_____|
+|EDF        |BBCAAAA_____|
+|___________|____________|
+```
++ Priority Based Schduling
+        - Multiple tasks, assign priority
+        - Higest priority task pre-empt
+
+        B -> highest
+        C -> medium
+        A -> lowest
+
+```
+ |_______________________|       
+0|   `B  `               |
+ |_______________________|
+1|         `C`           |
+ |_______________________|
+2| `A`   `A`    `A`  `A` |  
+ |_______________________| 
+
+```
+
++ Without an OS
 
 ```c
 
-#define HT16K33_OSCILLATOR_ON   ((0x2<<4) | (0x1));
-
-0x21; //enable oscilator
-(0x2<<4) | (0x1);
-
+main(){
+   while(1){
+        do_task(); //read sensor
+        do_task(); //react to sensor
+         do_task(); //GUI
+   }
+}
 ```
 
++ Real Time OS
+        - can provide `multi-tasking`
+        - can provide `prioriity based scheduling`
+        - can provide `interupt handling`
+        - `locking/memory alllocation`
 
-```bash
-# <!-- terminal code -->
-
-cat notesonterminal.md | wc -l
-cat notesonterminal.md | sort | uniq | wc -l
-git diff
-
-```
-
-### Getting Real-Time on a Modern System
-
-+ Small system
-        - don't run an OS
-        - turn off interrupts
-        - turn off advanced CPU features
-        - lock memory into place
-        - 
-+ High end Systems
-        - Deterministic helper CPUs
-        - PRU -beaglebores
-        - PIO -pi5
-        - embedded system in your `embeded system`
-        - 
-
-### Real Time OS
-
-- Special OS good at real time
-    - low latency OS calls + interupts
-    - Fast/ advanced context switch
-    - Job priority system
-          - specify som processes have high importance
-
-### Software Worst Case
-
-+ IRQ overhed
-    - linux top/bottom half responds to interrupts as fast as possible
-
-### Context Switching
-
-- Switches quickly between processes
-- Multitasking
-- 100 Hz - 1000 Hz
-        Linux (250 Hz) //task switching
-
-### Scheduler
-- picks what program runs next
-- complex
-- 
-
-
-
-
-<!-- Wednesday 11th October -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
++ Hard RTOS
+        -
 
 
 
