@@ -643,6 +643,8 @@ Has:-
 controller multiple devices
         <!-- Image here -->
 
+        ![](./Images/Fri20thClass/hardware)
+
         - 4 wire bus (2 power, 2 ground)
         - `SCCK` Serial Clock
         - `MOSI` Master OUT Slave IN
@@ -661,6 +663,8 @@ controller multiple devices
 - Clock Polarity + Phase
 
                 <!-- Image of how it works here -->
+
+                ![](./Images/Fri20thClass/controllerMultipleDevices)
 
                 * Most common 
                         polarity = 0
@@ -707,6 +711,8 @@ Pin 26 - `CEI`
         ```
                 <!-- Image of seting upp the SPI -->
 
+                ![](./Images/Fri20thClass/settingSPI)
+
 - MCP 3008
         8 port 10-bit SPI
                 A/D converter
@@ -727,6 +733,8 @@ Pin 26 - `CEI`
         deg_Farenheight = ((deg_C)* 9/5 ) + 32;
         printf("%lf"/n)
         ```
+
+        ![](./Images/Fri20thClass/codestogothru)
 
 <!-- Friday 20th October -->
 

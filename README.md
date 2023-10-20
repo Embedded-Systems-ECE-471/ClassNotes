@@ -509,9 +509,123 @@ git diff
 
 
 
+# Monday 16th October
+
+# Friday 20th October
+
+### SPI (SErial Pheripheral Interface Bus)
+
+- Synchronous Full-Duplex Serial Bus
+
+`Serial` - One bit at a time
+`Synchronous` - Clock wire
+`Full-duplex` - Send + receive at same time
+                        + LCD Display
+                        + SD cards
+                        + LED Strips
+                        + JTAC debugging
+                        + A/D converter
+
+- Hardware
+
+controller multiple devices
+        <!-- Image here -->
+
+        ![](./Images/Fri20thClass/hardware)
+
+        - 4 wire bus (2 power, 2 ground)
+        - `SCCK` Serial Clock
+        - `MOSI` Master OUT Slave IN
+        - `MISO` Master IN Slave OUT
+        - `CSO` Chip Select
+
+
+- Protocol
+
+        = Controller pulls chip select of desired device low     
+        = Controller starts clock usually few MHz      
+        = Must send + receive at same time
+        = Controller sends bits when done deselect + turn off clock
+        =
+        
+- Clock Polarity + Phase
+
+                <!-- Image of how it works here -->
+
+                ![](./Images/Fri20thClass/controllerMultipleDevices)
+
+                * Most common 
+                        polarity = 0
+                        phase = 0
+
+                * Interupts are posible Pi doesn't support it
+
+- Advantages
+
+        - Fast
+        - Simple to implement
+        - No unique id
+        - Unidirectional signals
+        - Low power
+        - Clock provided by controller
+
+- Disadvantages
+        - More pins
+        - Short distances
+        - No flow control
+        - No error reporting
+        - No standard
+
+### Doing Homework Setup on PI
+
+        ```c
+Pin 23 - `SCCK`
+Pin 19 -`MOSI `
+Pin 21 -`MISO `
+Pin 24 - `CEO`
+Pin 26 - `CEI`
+                        ```c
+                        /dev/spider(bus(pin), slave(pin))
+
+                        int mode = SPI_MODE_0;
+                        'ioctl(fd, SPI_IOC_WRMODE; $mode) 
 
 
 
+
+                        
+                        ```
+
+        ```
+                <!-- Image of seting upp the SPI -->
+
+                ![](./Images/Fri20thClass/settingSPI)
+
+- MCP 3008
+        8 port 10-bit SPI
+                A/D converter
+        
+        Send 3 bytes 
+                
+        ```c
+        Start bit_________________________________
+        |xxxxx| |xxxx|  |xxxx| |x098| |7654| |3201|
+        |_________________________________________|
+
+        ___________________________________________
+        |xxxxx| |xxxx|  |xxxx| |x098| |7654| |3201|
+        |_________________________________________|
+        <!-- geting `7654 3201` to position 1 -->
+        
+        int x = (buffer(1) << 8);
+        deg_Farenheight = ((deg_C)* 9/5 ) + 32;
+        printf("%lf"/n)
+        ```
+
+        ![](./Images/Fri20thClass/codestogothru)
+
+
+# Friday 20th October
 
 
 
