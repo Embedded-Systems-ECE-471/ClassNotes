@@ -816,6 +816,8 @@ Midterm on 17th
                 Radio waves
                 Power supply
         + Timing
+                Different paths through
+                Code takes different time
 
 
 <!-- Friday 3rd November -->
