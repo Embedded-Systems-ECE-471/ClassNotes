@@ -741,21 +741,11 @@ Pin 26 - `CEI`
 
 <!-- # Monday 23rd October -->
 
+```c
+ memset()
+        <!-- initializing to zero -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 
 
@@ -764,21 +754,71 @@ Pin 26 - `CEI`
 
 
 
+<!-- Friday 3rd November -->
+
+Midterm on 17th 
 
 
+### HW9
+         measuring temp
+         result on a display
+
+         either 1-wire / SPI
+         modular code
+         multiple C files
+         self contained code
+         working groups
+         git
 
 
+         ```c
+        // # include "temp.h" file
+
+         double get_temperature(void) {
+                // code here
+         }
+         
+        //  set the display and geting temp seperately
+
+         ```
 
 
+        ```c
+        double t;
+
+        t = 65.2;
+
+        // Using division to display the results
+        hundreds = t/100;
+        remainder = t % 100;
+        tens = remainder / 10;
 
 
+        sprintf(str, "%lf, t)
+        
+        
+        ```
+
+### Computer Security
+
+##### Types of Security Issues
+
+        + Crash
+        + Demand of Service (DOS)
+        + User account compromise
+        + Root account compromise  (rootkit)
+        + Remote root compromise
+
+##### Information Leakage/ Side Channel Attacks
+
+        + Side channel
+                Leak info
+                Radio waves
+                Power supply
+        + Timing
 
 
-
-
-
-
-
+<!-- Friday 3rd November -->
 
 
 
