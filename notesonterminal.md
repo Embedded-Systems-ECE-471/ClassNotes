@@ -612,9 +612,12 @@ git diff
         Linux (250 Hz) //task switching
 
 ### Scheduler
-- picks what program runs next
-- complex
-- 
+
+- Picks what program runs next
+- Complex :-
+  - O(N)
+  - O(1)
+  - O(log N) -used now "completely fair scheduler"
 
 
 
