@@ -627,7 +627,52 @@ git diff
 
 
 
+<!-- Wednesday 15th Notes -->
 
+#### HW8
++ error check
+
+
++ parasite mode 1-wire
+
+
+#### Shell Script
+
+#!/bin/sh
+ ---> she bang
+
+ /bin/bash
+ /bin/csh
+ /bin/zsh
+ /bin/fish
+
+ ##### Midtern
+ + Allowed 1 sheet notes
+ -> Cover mostly stuff since last midterm
+ -> Booting on Pi ((GPU does the booting))
+ -> Firmware
+ -> Real time (definition, hard , soft, firm)
+ -> i2C [more rules] / SPI (high bandwidth) (fewer rules no arbitration no error handling)
+  ./ 1-wire 
+-> Security / Code correctness
+-> avoid untrusted input
+-> Codding practices
+        comment code
+        avoid undefined behaviour
+        have a good spec
+        test your code
+
+
+##### Ethics in Software Engineering
++ Privacy
++ Data logging
++ Selling personal info
++ Dark patterns
+
+
+
+
+<!-- Wednesday 15th Notes -->
 
 
 
