@@ -1082,6 +1082,25 @@ P = C/_\ V Vdd & F
 
 ![](Images/powermosfets.jpg) 
 
+###### Static Power
+Leakage current
+
+Pstatic = IleakageVdd
+
+###### Thermal
+temperature closely related to power
+
+___________|Idle___|Load___|Time___|Energy__
+RPI        |3.0W   |3.3W   |23.5s  |77.6J
+Overdo     |2.6    |
+Beagleboard|       |
+Pandaboard |       |
+Chromebook |       |
+
+![](Images/powerdiffboards.jpg)
+
+Least Energy ---Pandaboard
+Fastest  ---- Chromebook
 
 
 <!-- Monday 20th November -->
