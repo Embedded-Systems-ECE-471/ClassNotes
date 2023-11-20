@@ -653,7 +653,7 @@ Has:-
 controller multiple devices
         <!-- Image here -->
 
-        ![](./Images/Fri20thClass/hardware)
+        ![](./Images/Fri20thClass/hardware.png)
 
         - 4 wire bus (2 power, 2 ground)
         - `SCCK` Serial Clock
@@ -722,7 +722,7 @@ controller multiple devices
 
                 <!-- Image of how it works here -->
 
-                ![](./Images/Fri20thClass/controllerMultipleDevices)
+                ![](./Images/Fri20thClass/controllerMultipleDevices.png)
 
                 * Most common 
                         polarity = 0
@@ -769,7 +769,7 @@ Pin 26 - `CEI`
         ```
                 <!-- Image of seting upp the SPI -->
 
-                ![](./Images/Fri20thClass/settingSPI)
+                ![](./Images/Fri20thClass/settingSPI.png)
 
 - MCP 3008
         8 port 10-bit SPI
@@ -792,7 +792,7 @@ Pin 26 - `CEI`
         printf("%lf"/n)
         ```
 
-        ![](./Images/Fri20thClass/codestogothru)
+        ![](./Images/Fri20thClass/codestogothru.png)
 
 <!-- Friday 20th October -->
 

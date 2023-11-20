@@ -531,7 +531,7 @@ git diff
 controller multiple devices
         <!-- Image here -->
 
-        ![](./Images/Fri20thClass/hardware)
+        ![](./Images/Fri20thClass/hardware.png)
 
         - 4 wire bus (2 power, 2 ground)
         - `SCCK` Serial Clock
@@ -552,7 +552,7 @@ controller multiple devices
 
                 <!-- Image of how it works here -->
 
-                ![](./Images/Fri20thClass/controllerMultipleDevices)
+                ![](./Images/Fri20thClass/controllerMultipleDevices.png)
 
                 * Most common 
                         polarity = 0
@@ -599,7 +599,7 @@ Pin 26 - `CEI`
         ```
                 <!-- Image of seting upp the SPI -->
 
-                ![](./Images/Fri20thClass/settingSPI)
+                ![](./Images/Fri20thClass/settingSPI.png)
 
 - MCP 3008
         8 port 10-bit SPI
@@ -622,7 +622,7 @@ Pin 26 - `CEI`
         printf("%lf"/n)
         ```
 
-        ![](./Images/Fri20thClass/codestogothru)
+        ![](./Images/Fri20thClass/codestogothru.png)
 
 
 # Friday 20th October
@@ -897,6 +897,42 @@ Baterries for Embedded Systems
 * LiOn Lithium Ion
 * Li-Po Lithium Polymer (rechargable)
 * controller to handle recharging
+
+###### CMOS
+
+MOSFET
+<!-- Diagram here -->
+
+CMOS Power
+Dynamic Power
+P = C/_\ V Vdd & F
+        & - activity factor
+
+![](Images/powermosfets.jpg) 
+
+###### Static Power
+Leakage current
+
+Pstatic = IleakageVdd
+
+###### Thermal
+temperature closely related to power
+
+___________|Idle___|Load___|Time___|Energy__
+RPI        |3.0W   |3.3W   |23.5s  |77.6J
+Overdo     |2.6    |
+Beagleboard|       |
+Pandaboard |       |
+Chromebook |       |
+
+![](Images/powerdiffboards.jpg)
+
+Least Energy ---Pandaboard
+Fastest  ---- Chromebook
+
+###### Measure
+measure voltage + current
+P = IV
 
 
 
