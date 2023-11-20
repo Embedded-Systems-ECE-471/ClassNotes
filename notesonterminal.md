@@ -1046,6 +1046,48 @@ Good code example
 <!-- Wednesday 8th November -->
 
 
+<!-- Monday 20th November -->
+
+##### Energy and Power
+
+Power = Energy / Time
+
+Power is `instantaneous`
+
+###### Units
+ Energy - Joules, kWh(3.6MJ)
+        - Therm(105.5MJ)
+        - 1 Ton TNY(4.26J)
+        - eV(1.6x10^-19 J)
+        - BTU(1055J)
+Power   - Watts (J/s)
+        - Horsepower(746W)
+        - Tons of refrigiration(12,000BTU/h)
+
+Baterries for Embedded Systems
+* LiOn Lithium Ion
+* Li-Po Lithium Polymer (rechargable)
+* controller to handle recharging
+        - constant current
+
+###### CMOS
+
+MOSFET
+<!-- Diagram here -->
+
+CMOS Power
+Dynamic Power
+P = C/_\ V Vdd & F
+        & - activity factor
+
+![](Images/powermosfets.jpg) 
+
+
+
+<!-- Monday 20th November -->
+
+
+
 
 
 

@@ -784,16 +784,125 @@ Midterm on 17th
 
 # Wednesday 8th November
 
+Where security is affected:-
+                + Financial
+                
+                + Power
+                   2003 Blackout
+                   race condition in server
 
+        
+Code Safety Standards
+        + Aironics
+        + Industrial
+        + Railway 
+        + Nuclear
+        + Medical
+        + Automotive
 
+                1. Aviation
+                        D0-178B/DO-17bC
 
+                        Catastrophic
+                        Hazardous
+                        Major
+                        Minor(inconvinience)
 
+                2. Automotive
+                        ISO 26262
+
+                        - definitions
+                        - management
+                        - safety life cycle
+                        - processes
+                        - Severity
+                                S0 -No injuries
+                                S3 -Not survivable
+                        - Exposure
+                                E0 - Not likely
+                                E4 - Highly likely
+
+                3. Medical
+                        IEC 62304
+
+                        - Avoid using software of unknown pedigree
+
+                        Class A
+
+                        Class C
+
+### Writing Good Code
+ - Various Books
+ - Comment your code
+ - Formatting
+ - Exact variable types
+        int32_t            int
+- Avoid undefined behavior
+- Tools to enforce
+
+### MISRA -  C
+ Motor Industry Software Reliability Asssociation
+
+ Guidlines:-
+        Mandatory
+        Required
+        Advisory
+
+        use int32_t
+        avoid functions that can fail -- `malloc()`
+        maintainable coding styles
+
+Compliance:- 
+        All mandatory must follow
+        Required rules you can break formal writeup
+
+        MISRA 2012
+                143 rules
+                16 directives
+
+Documentation:
+        Comment code
+        Auto-generate docs from code commments
+
+Good code example
+        `Space Shuttle`
+                - computers were good
+                - lots of testing
+                - only 3 bugs,,,.....,,,
 
 
 # Wednesday 8th November
 
 
 
+# Monday 20th November
+
+##### Energy and Power
+
+Power = Energy / Time
+
+Power is `instantaneous`
+
+###### Units
+ Energy - Joules, kWh(3.6MJ)
+        - Therm(105.5MJ)
+        - 1 Ton TNY(4.26J)
+        - eV(1.6x10^-19 J)
+        - BTU(1055J)
+Power   - Watts (J/s)
+        - Horsepower(746W)
+        - Tons of refrigiration(12,000BTU/h)
+
+Baterries for Embedded Systems
+* LiOn Lithium Ion
+* Li-Po Lithium Polymer (rechargable)
+* controller to handle recharging
+
+
+
+
+
+# Monday 20th November
 
 
 
