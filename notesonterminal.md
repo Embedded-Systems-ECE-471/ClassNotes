@@ -423,9 +423,8 @@ Filesystem often used
         + Device Tree, Binary blob, Open standard
         + ICCy, value
         + Memory; 1GB
-  
 
-# Wednesday 4th October
+<!--  Wednesday 4th October -->
 
 ### HW 4
 
@@ -476,140 +475,156 @@ What are real time constraints? :-
 + music
 + high speed trading 
 
-### Why isn't everything real time?
-
-- hard to do right
-- expensive
-- takes a lot of thesting
-- usually not necessary
-- 
-
-### What causes deviations from real time?
-
-- on an ideal machine same code you run would take same amount of time
-
-
-### Software                                                ### Hardware        
-+ interupts                                                    + branch prediction
-+ operationg system                                            + memory accesses
-+ garbage collection                                           + page faults
-+ multitasking                                                 + power scalling
 
 
 <!-- Friday 6th October -->
 
-<!-- Wednesday 11th October -->
 ### Midterm
-+ In class
-+ Closed book/notes
-+ One page of notes
-  
-
-  # Midterm Quiz Tips
-- Know x-ticks of embedded systems
-        + inside
-        + fixed purpose
-        + resource constrained
-        + real-time
-        + lots of I/O
-  
-- Operating System
-        + Benefits
-             ~  "layers of abstraction"
-        +  Downside
-             ~  overhead
-
-- C Code
-        + look at code know what it is doing
-  
-        ```c
-        open()  errors -1
-        read()
-        write()
-        ioctl()
-        close()
-
-        ```
-- Code Density
-        + why dense code is good in embedded?
-        + ARM compressed / embedded
-                ISA          THUMB2
-
-- GPIO / i2c
-        + know limitations
-        + no need to know protocol
-  
-
-### Project
-- look at pdf on website
-        common projects
-                + weather station
-                + video game
-                + 
+- In class
+- Closed book / notes
+- One page of nots
+- Mostly short answers
+- No coding, might give you code similar to HW task quiz
 
 
-### HW5
+### Topics
+- Characteristics of Embedded Systems
++ Benefits of an OS
++ Downside of an OS
++ Busses
+        GPIO
+        I2C - limitations
+                length of cable
+                speed
++ Code density
+        Having small code still important
++ No assembly coding
++ THUMB-2
 
-#### Datasheet
 
-- Using the datasheet given
+### Atari VCS 2600
+1977
+        6507 processor
+        6502 hacked off pins
+                12 address lines
+                4K ROM
+                128 bytes of RAM'
+                memmory mapped I/O
+                No firmware, jumps to reset vector
 
-[   |   ]
-15      8       
+
+### Software Jitter
++ Interupts
++ Operating system
++ Garbage collection
+
+
+### Latency
+ 
+
+
+<!-- Monday 16th October -->
+
+### Scheduler Strategies
+
+Program ready to run go into a queue
++ Simple ---> (IN-Order) order they arrived
++ Static ----> (RMS) Rate Monotonic Scheduling
+                shortest task first
++ Dynamic  ----> (EDF) Earlies Deadline First
+
+``A``; deadline finishes in `10s` , takes `4s`
+``B``; deadline finishes in `3s` , takes `2s`
+``C``; deadline finishes in `5s` , takes `1s`
+
+Example of scheduling strategies :-
+```
+|___________|012345678910|  ------> time they take
+|___________|____________|
+|In Order   |AAAABBC_____|
+|RMS        |CBBAAAA_____|
+|EDF        |BBCAAAA_____|
+|___________|____________|
+```
++ Priority Based Schduling
+        - Multiple tasks, assign priority
+        - Higest priority task pre-empt
+
+        B -> highest
+        C -> medium
+        A -> lowest
+
+```
+ |_______________________|       
+0|   `B  `               |
+ |_______________________|
+1|         `C`           |
+ |_______________________|
+2| `A`   `A`    `A`  `A` |  
+ |_______________________| 
+
+```
+
++ Without an OS
 
 ```c
 
-#define HT16K33_OSCILLATOR_ON   ((0x2<<4) | (0x1));
-
-0x21; //enable oscilator
-(0x2<<4) | (0x1);
-
+main(){
+   while(1){
+        do_task(); //read sensor
+        do_task(); //react to sensor
+         do_task(); //GUI
+   }
+}
 ```
 
++ Real Time OS
+        - can provide `multi-tasking`
+        - can provide `prioriity based scheduling`
+        - can provide `interupt handling`
+        - `locking/memory alllocation`
 
-```bash
-# <!-- terminal code -->
++ Hard RTOS
+        -
++ Vxwoncs
+Has:-
+        - priorities
+                0....255
+        - task is done
+                `yield()`
+        -all the same
+                `round robin`
+        - `ABC` `ABC`
++FreeRTOS
+Has:-
+        - STM32, Pi Pico
+        - Code `9K`
+        - Timers
+        - Interrupts
+        - Locks
+        - Priority Based Scheduling
 
-cat notesonterminal.md | wc -l
-cat notesonterminal.md | sort | uniq | wc -l
-git diff
++ General Purpose OSes
+- generally cant do realtime
+        - Often have priority based
+        - Linux "nice" 
 
-```
++ Posix Real Time
+        -Priorities:
+        ```
+                                  |highest|  lowest|    
+                nice      |  -20  |...19   |
+                real time |  0    |...99   |
 
-### Getting Real-Time on a Modern System
+        ```
++ Real Time Linux
+- rt-linux
+        - optimize interrupt handler
+        - changed locks to be pre-emptible
+        - make all of kernel pre-emptible
 
-+ Small system
-        - don't run an OS
-        - turn off interrupts
-        - turn off advanced CPU features
-        - lock memory into place
-        - 
-+ High end Systems
-        - Deterministic helper CPUs
-        - PRU -beaglebores
-        - PIO -pi5
-        - embedded system in your `embeded system`
-        - 
+<!-- Friday 20th October -->
 
-### Real Time OS
-
-- Special OS good at real time
-    - low latency OS calls + interupts
-    - Fast/ advanced context switch
-    - Job priority system
-          - specify som processes have high importance
-
-### Software Worst Case
-
-+ IRQ overhed
-    - linux top/bottom half responds to interrupts as fast as possible
-
-### Context Switching
-
-- Switches quickly between processes
-- Multitasking
-- 100 Hz - 1000 Hz
-        Linux (250 Hz) //task switching
 
 ### Scheduler
 
@@ -618,13 +633,33 @@ git diff
   - O(N)
   - O(1)
   - O(log N) -used now "completely fair scheduler"
+=======
+### SPI (SErial Pheripheral Interface Bus)
 
 
+- Synchronous Full-Duplex Serial Bus
 
+`Serial` - One bit at a time
+`Synchronous` - Clock wire
+`Full-duplex` - Send + receive at same time
+                        + LCD Display
+                        + SD cards
+                        + LED Strips
+                        + JTAC debugging
+                        + A/D converter
 
-<!-- Wednesday 11th October -->
+- Hardware
 
+controller multiple devices
+        <!-- Image here -->
 
+        ![](./Images/Fri20thClass/hardware)
+
+        - 4 wire bus (2 power, 2 ground)
+        - `SCCK` Serial Clock
+        - `MOSI` Master OUT Slave IN
+        - `MISO` Master IN Slave OUT
+        - `CSO` Chip Select
 
 
 <!-- Wednesday 15th Notes -->
@@ -673,76 +708,342 @@ git diff
 
 
 <!-- Wednesday 15th Notes -->
+=======
+- Protocol
 
+        = Controller pulls chip select of desired device low     
+        = Controller starts clock usually few MHz      
+        = Must send + receive at same time
+        = Controller sends bits when done deselect + turn off clock
+        =
+        
+- Clock Polarity + Phase
 
 
+                <!-- Image of how it works here -->
 
+                ![](./Images/Fri20thClass/controllerMultipleDevices)
 
+                * Most common 
+                        polarity = 0
+                        phase = 0
 
+                * Interupts are posible Pi doesn't support it
 
+- Advantages
 
+        - Fast
+        - Simple to implement
+        - No unique id
+        - Unidirectional signals
+        - Low power
+        - Clock provided by controller
 
+- Disadvantages
+        - More pins
+        - Short distances
+        - No flow control
+        - No error reporting
+        - No standard
 
+### Doing Homework Setup on PI
 
+        ```c
+Pin 23 - `SCCK`
+Pin 19 -`MOSI `
+Pin 21 -`MISO `
+Pin 24 - `CEO`
+Pin 26 - `CEI`
+                        ```c
+                        /dev/spider(bus(pin), slave(pin))
 
+                        int mode = SPI_MODE_0;
+                        'ioctl(fd, SPI_IOC_WRMODE; $mode) 
 
 
 
 
+                        
+                        ```
 
+        ```
+                <!-- Image of seting upp the SPI -->
 
+                ![](./Images/Fri20thClass/settingSPI)
 
+- MCP 3008
+        8 port 10-bit SPI
+                A/D converter
+        
+        Send 3 bytes 
+                
+        ```c
+        Start bit_________________________________
+        |xxxxx| |xxxx|  |xxxx| |x098| |7654| |3201|
+        |_________________________________________|
 
+        ___________________________________________
+        |xxxxx| |xxxx|  |xxxx| |x098| |7654| |3201|
+        |_________________________________________|
+        <!-- geting `7654 3201` to position 1 -->
+        
+        int x = (buffer(1) << 8);
+        deg_Farenheight = ((deg_C)* 9/5 ) + 32;
+        printf("%lf"/n)
+        ```
 
+        ![](./Images/Fri20thClass/codestogothru)
 
+<!-- Friday 20th October -->
 
 
+<!-- # Monday 23rd October -->
 
+```c
+ memset()
+        <!-- initializing to zero -->
 
+```
 
 
 
+<!-- # Monday 23rd October -->
 
 
 
 
+<!-- Friday 3rd November -->
 
+Midterm on 17th 
 
 
-  
+### HW9
+         measuring temp
+         result on a display
 
+         either 1-wire / SPI
+         modular code
+         multiple C files
+         self contained code
+         working groups
+         git
 
 
+         ```c
+        // # include "temp.h" file
 
+         double get_temperature(void) {
+                // code here
+         }
+         
+        //  set the display and geting temp seperately
 
+         ```
 
 
+        ```c
+        double t;
 
+        t = 65.2;
 
+        // Using division to display the results
+        hundreds = t/100;
+        remainder = t % 100;
+        tens = remainder / 10;
 
 
+        sprintf(str, "%lf, t)
+        
+        
+        ```
 
+### Computer Security
 
+##### Types of Security Issues
 
+        + Crash
+        + Demand of Service (DOS)
+        + User account compromise
+        + Root account compromise  (rootkit)
+        + Remote root compromise
 
+##### Information Leakage/ Side Channel Attacks
 
+        + Side channel
+                Leak info
+                Radio waves
+                Power supply
+        + Timing
+                Different paths through
+                Code takes different time
 
+        + Meltdown/ Spectre
+                modern 0o0 processors
+                speculative execution
 
+        + Deceptive code
+                Typo squatting
+                Javascript / npm
+                Sneak code into Linux kernel
+                Uot Minnesotta tried to sneak code in
+                Source code unicode
 
+        + Finding Bugs
+                Crashes
+                Source code inspection
+                Watching lists/ bug reports
+                Static checker
+                Dynamic checkers/ valgrind
+                Festing
+                Fuzzing
+                <!-- Social Engineering -->
+                       
+                
+<!-- Friday 3rd November -->
 
 
 
+<!-- Monday 6th November -->
 
 
+##### Social Engineering
+        + Talking your way in
+        + Phishing attacks
+        + "The art of deception"
 
+##### Case Studies
+        - 2010 IEEE SoSP
+                Fuzzed a car (CANBUS) - control brakes
+                                      - heating / cooling
+                                      - windows / locks
+                                      - anti lock
+                                      - cruise control
+                                      - pre-crash detectiomn
+                                      - instrument panel
+                                      - stop engine
 
+        - Stuxnet
+                SCADA (Supervisory Control + Data Acquisition) 
+                                        - Via internet plus USB key
+                                        - Four zero-day vulnebility
+                                        - Was to activate on a specific Siemens SCADA
 
 
+        Software Bugs
+                + Not all issues are security
+                + Bad code/ accidental
+                + User interface
 
+        Automotive
+                + Bugs in Toyota firmware
+                        (engine accelerated without stopping)
+                        VIN
+                + Airplanes
+                        AA Flight 965
+                                (waypoint R) --computer picked the wrong waypoint and crashed
+                        AirFrance 447
+                + Military
+                        Patriot Missile
+                        Yorktown Smart Ship (1997) ---Windows NT
+                        
 
 
 
 
+<!-- Monday 6th November -->
+
+
+
+<!-- Wednesday 8th November -->
+Where security is affected:-
+                + Financial
+                
+                + Power
+                   2003 Blackout
+                   race condition in server
+
+        
+Code Safety Standards
+        + Aironics
+        + Industrial
+        + Railway 
+        + Nuclear
+        + Medical
+        + Automotive
+
+                1. Aviation
+                        D0-178B/DO-17bC
+
+                        Catastrophic
+                        Hazardous
+                        Major
+                        Minor(inconvinience)
+
+                2. Automotive
+                        ISO 26262
+
+                        - definitions
+                        - management
+                        - safety life cycle
+                        - processes
+                        - Severity
+                                S0 -No injuries
+                                S3 -Not survivable
+                        - Exposure
+                                E0 - Not likely
+                                E4 - Highly likely
+
+                3. Medical
+                        IEC 62304
+
+                        - Avoid using software of unknown pedigree
+
+                        Class A
+
+                        Class C
+
+### Writing Good Code
+ - Various Books
+ - Comment your code
+ - Formatting
+ - Exact variable types
+        int32_t            int
+- Avoid undefined behavior
+- Tools to enforce
+
+### MISRA -  C
+ Motor Industry Software Reliability Asssociation
+
+ Guidlines:-
+        Mandatory
+        Required
+        Advisory
+
+        use int32_t
+        avoid functions that can fail -- `malloc()`
+        maintainable coding styles
+
+Compliance:- 
+        All mandatory must follow
+        Required rules you can break formal writeup
+
+        MISRA 2012
+                143 rules
+                16 directives
+
+Documentation:
+        Comment code
+        Auto-generate docs from code commments
+
+Good code example
+        `Space Shuttle`
+                - computers were good
+                - lots of testing
+                - only 3 bugs,,,.....,,,
+
+
+
+<!-- Wednesday 8th November -->
 
 
 

@@ -509,6 +509,280 @@ git diff
 
 
 
+# Monday 16th October
+
+# Friday 20th October
+
+### SPI (SErial Pheripheral Interface Bus)
+
+- Synchronous Full-Duplex Serial Bus
+
+`Serial` - One bit at a time
+`Synchronous` - Clock wire
+`Full-duplex` - Send + receive at same time
+                        + LCD Display
+                        + SD cards
+                        + LED Strips
+                        + JTAC debugging
+                        + A/D converter
+
+- Hardware
+
+controller multiple devices
+        <!-- Image here -->
+
+        ![](./Images/Fri20thClass/hardware)
+
+        - 4 wire bus (2 power, 2 ground)
+        - `SCCK` Serial Clock
+        - `MOSI` Master OUT Slave IN
+        - `MISO` Master IN Slave OUT
+        - `CSO` Chip Select
+
+
+- Protocol
+
+        = Controller pulls chip select of desired device low     
+        = Controller starts clock usually few MHz      
+        = Must send + receive at same time
+        = Controller sends bits when done deselect + turn off clock
+        =
+        
+- Clock Polarity + Phase
+
+                <!-- Image of how it works here -->
+
+                ![](./Images/Fri20thClass/controllerMultipleDevices)
+
+                * Most common 
+                        polarity = 0
+                        phase = 0
+
+                * Interupts are posible Pi doesn't support it
+
+- Advantages
+
+        - Fast
+        - Simple to implement
+        - No unique id
+        - Unidirectional signals
+        - Low power
+        - Clock provided by controller
+
+- Disadvantages
+        - More pins
+        - Short distances
+        - No flow control
+        - No error reporting
+        - No standard
+
+### Doing Homework Setup on PI
+
+        ```c
+Pin 23 - `SCCK`
+Pin 19 -`MOSI `
+Pin 21 -`MISO `
+Pin 24 - `CEO`
+Pin 26 - `CEI`
+                        ```c
+                        /dev/spider(bus(pin), slave(pin))
+
+                        int mode = SPI_MODE_0;
+                        'ioctl(fd, SPI_IOC_WRMODE; $mode) 
+
+
+
+
+                        
+                        ```
+
+        ```
+                <!-- Image of seting upp the SPI -->
+
+                ![](./Images/Fri20thClass/settingSPI)
+
+- MCP 3008
+        8 port 10-bit SPI
+                A/D converter
+        
+        Send 3 bytes 
+                
+        ```c
+        Start bit_________________________________
+        |xxxxx| |xxxx|  |xxxx| |x098| |7654| |3201|
+        |_________________________________________|
+
+        ___________________________________________
+        |xxxxx| |xxxx|  |xxxx| |x098| |7654| |3201|
+        |_________________________________________|
+        <!-- geting `7654 3201` to position 1 -->
+        
+        int x = (buffer(1) << 8);
+        deg_Farenheight = ((deg_C)* 9/5 ) + 32;
+        printf("%lf"/n)
+        ```
+
+        ![](./Images/Fri20thClass/codestogothru)
+
+
+# Friday 20th October
+
+
+# Monday 23rd October
+
+```c
+ memset()
+        <!-- initializing to zero -->
+
+```
+
+
+
+# Monday 23rd October
+
+
+
+
+# Friday 3rd November
+
+Midterm on 17th 
+
+
+### HW9
+         measuring temp
+         result on a display
+
+         either 1-wire / SPI
+         modular code
+         multiple C files
+         self contained code
+         working groups
+         git
+
+
+         ```c
+        // # include "temp.h" file
+
+         double get_temperature(void) {
+                // code here
+         }
+         
+        //  set the display and geting temp seperately
+
+         ```
+
+
+        ```c
+        double t;
+
+        t = 65.2;
+
+        // Using division to display the results
+        hundreds = t/100;
+        remainder = t % 100;
+        tens = remainder / 10;
+
+
+        sprintf(str, "%lf, t)
+        
+        
+        ```
+
+### Computer Security
+
+##### Types of Security Issues
+
+        + Crash
+        + Demand of Service (DOS)
+        + User account compromise
+        + Root account compromise  (rootkit)
+        + Remote root compromise
+
+##### Information Leakage/ Side Channel Attacks
+
+        + Side channel
+                Leak info
+                Radio waves
+                Power supply
+        + Timing
+                Different paths through
+                Code takes different time
+
+        + Meltdown/ Spectre
+                modern 0o0 processors
+                speculative execution
+
+        + Deceptive code
+                Typo squatting
+                Javascript / npm
+                Sneak code into Linux kernel
+                Uot Minnesotta tried to sneak code in
+                Source code unicode
+
+        + Finding Bugs
+                Crashes
+                Source code inspection
+                Watching lists/ bug reports
+                Static checker
+                Dynamic checkers/ valgrind
+                Festing
+                Fuzzing
+                <!-- Social Engineering -->
+                       
+                
+# Friday 3rd November
+
+
+
+# Monday 6th November
+
+
+##### Social Engineering
+        + Talking your way in
+        + Phishing attacks
+        + "The art of deception"
+
+##### Case Studies
+        - 2010 IEEE SoSP
+                Fuzzed a car (CANBUS) - control brakes
+                                      - heating / cooling
+                                      - windows / locks
+                                      - anti lock
+                                      - cruise control
+                                      - pre-crash detectiomn
+                                      - instrument panel
+                                      - stop engine
+
+        - Stuxnet
+                SCADA (Supervisory Control + Data Acquisition) 
+                                        - Via internet plus USB key
+                                        - Four zero-day vulnebility
+                                        - Was to activate on a specific Siemens SCADA
+
+
+        Software Bugs
+                + Not all issues are security
+                + Bad code/ accidental
+                + User interface
+
+        Automotive
+                + Bugs in Toyota firmware
+                        (engine accelerated without stopping)
+                        VIN
+                + Airplanes
+                        AA Flight 965
+                                (waypoint R) --computer picked the wrong waypoint and crashed
+                        AirFrance 447
+                + Military
+                        Patriot Missile
+                        Yorktown Smart Ship (1997) ---Windows NT
+                        
+
+# Monday 6th November
+
+
+
+# Wednesday 8th November
 
 
 
@@ -516,9 +790,7 @@ git diff
 
 
 
-
-
-
+# Wednesday 8th November
 
 
 
