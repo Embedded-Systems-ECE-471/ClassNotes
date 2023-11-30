@@ -988,6 +988,78 @@ Good code example
 <!-- Wednesday 8th November -->
 
 
+<!-- Monday 13th Novemeber-->
+
+#### Midterm
+
+primarily material since the last midterm
+
+- Booting on Pi / Firmware
+- Realtime
+        definition
+        hard/soft/firm
+- i2c/SPI/1-wire (differences and importance)
+- Security
+- Coding practices
+- 1 page notes
+
+#### HW7
+
+```c
+memset(&spi, 0, sizeof(struct spi_ioc_transfer));
+
+
+/dev/null   ---> throws everything away
+
+program > /dev/null
+stdout
+stderr
+
+/dev/full    ----> always looks full
+/dev/zero    ----> 
+/dev/random  ----> gives random numbers(good for encryption)
+
+CPU provides the randomnes
+        Linux mixes in I/O
+
+pseudo random number generation
+        have to seed it to start
+
+
+
+```
+
+ i2C / SPI
+
+ WII Nunchuck
+        secret handshake
+        0xf0/0x55/0xfb/0x00
+older   0x40/0x00
+
+send    0x00
+        joy-x
+        joy-y
+          acc x
+          acc y
+          acc z
+
+Keyboard
+        PS/2 serial bus
+             returned keycodes
+             microcontroller
+        
+        USB  keyboard
+             OS abstracts
+        
+Digital Audio
+
+        Audio --analog signal
+
+        Digital - Analog converter
+                  44kHz
+                  wav file
+
+          
 
 
 
@@ -1002,6 +1074,30 @@ Good code example
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Monday 13th Novemeber-->
 
 
 
