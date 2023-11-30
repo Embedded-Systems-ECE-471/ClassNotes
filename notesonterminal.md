@@ -625,7 +625,17 @@ Has:-
 
 <!-- Friday 20th October -->
 
+
+### Scheduler
+
+- Picks what program runs next
+- Complex :-
+  - O(N)
+  - O(1)
+  - O(log N) -used now "completely fair scheduler"
+=======
 ### SPI (SErial Pheripheral Interface Bus)
+
 
 - Synchronous Full-Duplex Serial Bus
 
@@ -643,7 +653,7 @@ Has:-
 controller multiple devices
         <!-- Image here -->
 
-        ![](./Images/Fri20thClass/hardware)
+        ![](./Images/Fri20thClass/hardware.png)
 
         - 4 wire bus (2 power, 2 ground)
         - `SCCK` Serial Clock
@@ -652,6 +662,53 @@ controller multiple devices
         - `CSO` Chip Select
 
 
+<!-- Wednesday 15th Notes -->
+
+#### HW8
++ error check
+
+
++ parasite mode 1-wire
+
+
+#### Shell Script
+
+#!/bin/sh
+ ---> she bang
+
+ /bin/bash
+ /bin/csh
+ /bin/zsh
+ /bin/fish
+
+ ##### Midtern
+ + Allowed 1 sheet notes
+ -> Cover mostly stuff since last midterm
+ -> Booting on Pi ((GPU does the booting))
+ -> Firmware
+ -> Real time (definition, hard , soft, firm)
+ -> i2C [more rules] / SPI (high bandwidth) (fewer rules no arbitration no error handling)
+  ./ 1-wire 
+-> Security / Code correctness
+-> avoid untrusted input
+-> Codding practices
+        comment code
+        avoid undefined behaviour
+        have a good spec
+        test your code
+
+
+##### Ethics in Software Engineering
++ Privacy
++ Data logging
++ Selling personal info
++ Dark patterns
+
+
+
+
+<!-- Wednesday 15th Notes -->
+=======
 - Protocol
 
         = Controller pulls chip select of desired device low     
@@ -662,9 +719,10 @@ controller multiple devices
         
 - Clock Polarity + Phase
 
+
                 <!-- Image of how it works here -->
 
-                ![](./Images/Fri20thClass/controllerMultipleDevices)
+                ![](./Images/Fri20thClass/controllerMultipleDevices.png)
 
                 * Most common 
                         polarity = 0
@@ -711,7 +769,7 @@ Pin 26 - `CEI`
         ```
                 <!-- Image of seting upp the SPI -->
 
-                ![](./Images/Fri20thClass/settingSPI)
+                ![](./Images/Fri20thClass/settingSPI.png)
 
 - MCP 3008
         8 port 10-bit SPI
@@ -734,7 +792,7 @@ Pin 26 - `CEI`
         printf("%lf"/n)
         ```
 
-        ![](./Images/Fri20thClass/codestogothru)
+        ![](./Images/Fri20thClass/codestogothru.png)
 
 <!-- Friday 20th October -->
 
@@ -988,6 +1046,7 @@ Good code example
 <!-- Wednesday 8th November -->
 
 
+<<<<<<< HEAD
 <!-- Monday 13th Novemeber-->
 
 #### Midterm
@@ -1060,6 +1119,69 @@ Digital Audio
                   wav file
 
           
+=======
+<!-- Monday 20th November -->
+
+##### Energy and Power
+
+Power = Energy / Time
+
+Power is `instantaneous`
+
+###### Units
+ Energy - Joules, kWh(3.6MJ)
+        - Therm(105.5MJ)
+        - 1 Ton TNY(4.26J)
+        - eV(1.6x10^-19 J)
+        - BTU(1055J)
+Power   - Watts (J/s)
+        - Horsepower(746W)
+        - Tons of refrigiration(12,000BTU/h)
+
+Baterries for Embedded Systems
+* LiOn Lithium Ion
+* Li-Po Lithium Polymer (rechargable)
+* controller to handle recharging
+        - constant current
+
+###### CMOS
+
+MOSFET
+<!-- Diagram here -->
+
+CMOS Power
+Dynamic Power
+P = C/_\ V Vdd & F
+        & - activity factor
+
+![](Images/powermosfets.jpg) 
+
+###### Static Power
+Leakage current
+
+Pstatic = IleakageVdd
+
+###### Thermal
+temperature closely related to power
+
+___________|Idle___|Load___|Time___|Energy__
+RPI        |3.0W   |3.3W   |23.5s  |77.6J
+Overdo     |2.6    |
+Beagleboard|       |
+Pandaboard |       |
+Chromebook |       |
+
+![](Images/powerdiffboards.jpg)
+
+Least Energy ---Pandaboard
+Fastest  ---- Chromebook
+
+
+<!-- Monday 20th November -->
+
+
+
+>>>>>>> 49f6c2ad0cc24e632ee02d21f661a1a31d1965e8
 
 
 
