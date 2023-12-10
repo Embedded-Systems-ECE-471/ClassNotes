@@ -1,5 +1,4 @@
 
-
 <!-- Friday 15th Sept -->
 
 - `sudo shutdown -h` now(shut down immediately)
@@ -1046,7 +1045,7 @@ Good code example
 <!-- Wednesday 8th November -->
 
 
-<<<<<<< HEAD
+
 <!-- Monday 13th Novemeber-->
 
 #### Midterm
@@ -1119,7 +1118,6 @@ Digital Audio
                   wav file
 
           
-=======
 <!-- Monday 20th November -->
 
 ##### Energy and Power
@@ -1179,9 +1177,6 @@ Fastest  ---- Chromebook
 
 <!-- Monday 20th November -->
 
-
-
->>>>>>> 49f6c2ad0cc24e632ee02d21f661a1a31d1965e8
 
 
 
